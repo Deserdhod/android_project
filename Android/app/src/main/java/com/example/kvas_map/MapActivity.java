@@ -1,32 +1,18 @@
 package com.example.kvas_map;
 
 import android.os.Bundle;
-import android.view.KeyEvent;
-import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.yandex.mapkit.Animation;
-import com.yandex.mapkit.GeoObjectCollection;
 import com.yandex.mapkit.MapKitFactory;
 import com.yandex.mapkit.geometry.Point;
 import com.yandex.mapkit.map.CameraPosition;
-import com.yandex.mapkit.map.CameraUpdateReason;
-import com.yandex.mapkit.map.Map;
-import com.yandex.mapkit.map.MapObjectCollection;
 import com.yandex.mapkit.mapview.MapView;
-import com.yandex.mapkit.search.Response;
 import com.yandex.mapkit.search.SearchFactory;
 import com.yandex.mapkit.search.SearchManager;
 import com.yandex.mapkit.search.SearchManagerType;
-import com.yandex.runtime.Error;
-import com.yandex.runtime.image.ImageProvider;
-import com.yandex.runtime.network.NetworkError;
-import com.yandex.runtime.network.RemoteError;
 
 public class MapActivity extends AppCompatActivity {
 
@@ -47,9 +33,8 @@ public class MapActivity extends AppCompatActivity {
         searchManager = SearchFactory.getInstance().createSearchManager(SearchManagerType.COMBINED);
 
         mapView = (MapView) findViewById(R.id.map_view);
-        mapView.getMap().addCameraListener(this);
         mapView.getMap().move(
-                new CameraPosition(new Point(56.0153, 92.8932), 11.0f, 0.0f, 0.0f),
+                new CameraPosition(new Point(55.751574, 37.573856), 11.0f, 0.0f, 0.0f),
                 new Animation(Animation.Type.SMOOTH, 0),
                 null);
 /*        eLocation = findViewById(R.id.edit_location);
@@ -70,6 +55,21 @@ public class MapActivity extends AppCompatActivity {
             }
         });
         submitQuery(eLocation.getText().toString());*/
+    }
+    @Override
+    protected void onStop() {
+        // Вызов onStop нужно передавать инстансам MapView и MapKit.
+        mapView.onStop();
+        MapKitFactory.getInstance().onStop();
+        super.onStop();
+    }
+
+    @Override
+    protected void onStart() {
+        // Вызов onStart нужно передавать инстансам MapView и MapKit.
+        super.onStart();
+        MapKitFactory.getInstance().onStart();
+        mapView.onStart();
     }
 
 
