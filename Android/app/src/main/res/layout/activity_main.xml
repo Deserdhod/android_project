@@ -36,4 +36,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/__900x500" />
+
+    <Button
+        android:id="@+id/weather_button"
+        android:layout_width="412dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="272dp"
+        android:text="Погода"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

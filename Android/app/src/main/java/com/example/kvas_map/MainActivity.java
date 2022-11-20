@@ -38,8 +38,18 @@ public class MainActivity extends AppCompatActivity {
             }
         };
 
+        Button weatherButton = (Button) findViewById(R.id.weather_button);
+        View.OnClickListener onClickListenerWeatherButton = new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WeatherActivity.class);
+                startActivity(intent);
+            }
+        };
+
         profileButton.setOnClickListener(onClickListenerProfileButton);
         mapButton.setOnClickListener(onClickListenerMapButton);
+        weatherButton.setOnClickListener(onClickListenerWeatherButton);
     }
     public void checkPermissions(){
         int PERMISSION_ALL = 1;
