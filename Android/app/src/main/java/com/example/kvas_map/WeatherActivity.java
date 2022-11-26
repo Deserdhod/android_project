@@ -47,8 +47,8 @@ public class WeatherActivity extends AppCompatActivity {
                     String key = "";
                     /*String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +
                             "&appid" + key + "&units=metric";*/
-                    String url = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=a2106205d5411fb9c460914a0ead6502&units=metric";
-                    //https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=a2106205d5411fb9c460914a0ead6502&units=metric
+                    String url = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=&units=metric";
+                    //https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=&units=metric
                     new GetURLData().execute(url);
                 }
             }
