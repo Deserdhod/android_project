@@ -23,7 +23,7 @@ public class MapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        MapKitFactory.setApiKey("61348beb-3bbf-4259-988c-039babcaeb1e");
+        MapKitFactory.setApiKey("");
         MapKitFactory.initialize(this);
         SearchFactory.initialize(this);
 
