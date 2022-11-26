@@ -44,7 +44,7 @@ public class WeatherActivity extends AppCompatActivity {
                     Toast.makeText(WeatherActivity.this, R.string.empty_field, Toast.LENGTH_LONG).show();
                 else {
                     String city = userField.getText().toString();
-                    String key = "a2106205d5411fb9c460914a0ead6502";
+                    String key = "";
                     /*String url = "https://api.openweathermap.org/data/2.5/weather?q=" + city +
                             "&appid" + key + "&units=metric";*/
                     String url = "https://api.openweathermap.org/data/2.5/weather?q=Moscow&appid=a2106205d5411fb9c460914a0ead6502&units=metric";
